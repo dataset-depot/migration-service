@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"net/http"
-	"github.com/dataset-depot/internal/migration-service/httpserver"
+	"github.com/dataset-depot/migration-service/internal/httpserver"
 )
 
 func (h *Handlers) Routes() http.Handler {

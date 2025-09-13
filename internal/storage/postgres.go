@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 	_ "github.com/jackc/pgx/v5/stdlib"
-	"github.com/dataset-depot/internal/migration-service/config"
+	"github.com/dataset-depot/migration-service/internal/config"
 )
 
 func MustOpenPostgres(c config.Database) *sql.DB {
