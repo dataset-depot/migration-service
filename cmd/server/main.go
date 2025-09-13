@@ -36,7 +36,7 @@ func main() {
 			log.Fatalf("http server start failed: %v", err)
 		}
 	}()
-	log.Printf("server listening on %s", cfg.Http.Addr)
+	log.Printf("server listening on %s", cfg.HTTP.Addr)
 
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, syscall.SIGINT, syscall.SIGTERM)

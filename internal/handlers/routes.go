@@ -5,7 +5,7 @@ import (
 	"github.com/dataset-depot/migration-service/internal/httpserver"
 )
 
-func (h *Handlers) Routes() http.Handler {
+func (h *Handlers) Routes(maxBodyBytes int64) http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/health", h.health)
 	mux.HandleFunc("/schema/version", h.schemaVersion)
