@@ -3,7 +3,6 @@ package migrate
 import (
 	"context"
 	"database/sql"
-	"errors"
 	"path/filepath"
 	"time"
 	"github.com/pressly/goose/v3"

@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type Http struct {
+type HTTP struct {
 	Addr					string
 	ReadTimeout		time.Duration
 	WriteTimeout	time.Duration
@@ -37,7 +37,7 @@ type CloudSQL struct {
 }
 
 type Config struct {
-	HTTP			Http
+	HTTP			HTTP
 	Database	Database
 	Security	Security
 	CloudSQL	CloudSQL
@@ -75,7 +75,7 @@ func Load() Config {
 }
 
 func must(k string) string {
-	if v := os.Getenv(k); v == "" {
+	v := os.Getenv(k); if v == "" {
 		log.Fatalf("missing env: %s", k)
 	}
 	return v
