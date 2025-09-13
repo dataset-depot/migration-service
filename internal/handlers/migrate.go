@@ -25,7 +25,7 @@ func (h *Handlers) migrateUpload(w http.ResponseWriter, r *http.Request) {
 	defer os.Remove(tmpZip.Name())
 
 	if _, err := io.Copy(tmpZip, file); err != nil { http.Error(w, err.Error(), 500); return }
-	into, _ := tmpZip.Stat()
+	info, _ := tmpZip.Stat()
 	rdr, err := zip.NewReader(tmpZip, info.Size())
 	if err != nil { http.Error(w, "not a zip: "+err.Error(), 400); return }
 

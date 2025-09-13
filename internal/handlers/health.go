@@ -9,7 +9,7 @@ import (
 
 type Handlers struct {
 	db					*sql.DB
-	migrator		migrate.Migrator
+	migrator		migrate.Runner
 	cloudSQL		CloudSQL
 	adminToken	string
 }
