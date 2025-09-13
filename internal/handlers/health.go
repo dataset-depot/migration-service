@@ -20,7 +20,7 @@ type CloudSQL interface {
 	CreateDatabase(ctx context.Context, project, instance, name string) (any, error)
 }
 
-func New(db *sql.DB, m migrate.Migrator, token string, cloud CloudSQL) *Handlers {
+func New(db *sql.DB, m migrate.Runner, token string, cloud CloudSQL) *Handlers {
 	return &Handlers{db: db, migrator: m, adminToken: token, cloudSQL: cloud}
 }
 
