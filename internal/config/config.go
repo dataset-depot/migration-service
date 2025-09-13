@@ -52,7 +52,7 @@ func Load() Config {
 			MaxBodyBytes: 32 << 20,
 		},
 		Database: Database{
-			UseSocket								os.Getenv("INSTANCE_CONNECTION_NAME") != "",
+			UseSocket:							os.Getenv("INSTANCE_CONNECTION_NAME") != "",
 			InstanceConnectionName: os.Getenv("INSTANCE_CONNECTION_NAME"),
 			Host:										getenv("DB_HOST", "127.0.0.1"),
 			Port:										getenv("DB_PORT", "5432"),
