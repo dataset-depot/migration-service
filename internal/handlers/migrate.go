@@ -33,7 +33,7 @@ func (h *Handlers) migrateUpload(w http.ResponseWriter, r *http.Request) {
 	if err != nil { http.Error(w, err.Error(), 500); return }
 	defer os.RemoveAll(dst)
 
-	if err := unzipTo(dst, rdr); err != nil { http.Error(w, err.Error()), 500; return }
+	if err := unzipTo(dst, rdr); err != nil { http.Error(w, err.Error(), 500); return }
 
 	ctx, cancel := context.WithTimeout(r.Context(), 10*time.Minute); defer cancel()
 
