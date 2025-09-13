@@ -1,1 +1,1 @@
-module github.com/slotter/migration-service
+module github.com/dataset-depot/migration-service
